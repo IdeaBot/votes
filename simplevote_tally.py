@@ -10,7 +10,7 @@ React to the message you want to tally with the tally emoji
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.vote_dict = self.public_namespace.vote_dict
+        self.simplevote_dict = self.public_namespace.simplevote_dict
 
     def action (self, reaction, user):
         yield from self.send_message(reaction.message.channel, "The tally is "+str(self.tally(reaction.message.id)))
@@ -18,9 +18,9 @@ React to the message you want to tally with the tally emoji
     def tally(self, message_id):
         '''(discord.Message.id) -> int
         calculates the vote's tally'''
-        if message_id not in self.vote_dict:
+        if message_id not in self.simplevote_dict:
             return 0
         total = 0
-        for i in self.vote_dict[message_id]:
-            total += self.vote_dict[message_id][i]
+        for i in self.simplevote_dict[message_id]:
+            total += self.simplevote_dict[message_id][i]
         return total

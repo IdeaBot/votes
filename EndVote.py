@@ -88,9 +88,10 @@ The End Vote command is probably restricted to certain users'''
             del(self.vote_dict[poll])
             # remove message from always_watch_messages
             for item in self.always_watch_messages:
-                if item.id == poll:
-                    self.always_watch_messages.remove(item)
-                    break
+                if not isinstance(item, str):  # ignore loading warning str
+                    if item.id == poll:
+                        self.always_watch_messages.remove(item)
+                        break
         else:
             yield from send_func(message.channel, "Invalid ID or name")
 
