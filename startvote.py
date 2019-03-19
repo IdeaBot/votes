@@ -28,7 +28,7 @@ Where
 `@Idea start vote name "Yomama is..." options "fat" "easy" "ugly" mode FPTP`
 `@Idea start vote name "Is Idea Great?" options "yes" "no doubt"`
 
-The StartVoteCommand is probably restricted to certain users'''
+This command is probably restricted to certain users'''
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

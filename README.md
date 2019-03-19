@@ -7,13 +7,16 @@ IdeaBot add-ons package for advanced voting using FPTP and STP as well as simple
 This outlines the functionality of each command.
 Use `@Idea help <command name>` to get usage instructions.
 
-* A_Vote
-> Dummy command to initialize the votes package.
+* !simplevote
+> Dummy command to initialize the simplevote functionality
 
-* EndVote
+* !vote
+> Dummy command to initialize the voting functionality.
+
+* endvote
 > Close a poll.
 
-* RegisterVote
+* registervote
 > Add a vote (or votes) to a poll.
 
 * simplevote_add
@@ -25,11 +28,11 @@ Use `@Idea help <command name>` to get usage instructions.
 * simplevote_tally
 > Tally the simple votes on a message.
 
-* StartBallot
+* startballot
 > PM a user with a ballot, so they can vote in a poll. (Reaction)
 
-* StartBallotC
+* startballotc
 > PM a user with a ballot, so they can vote in a poll. (Command)
 
-* StartVote
+* startvote
 > Create a poll.

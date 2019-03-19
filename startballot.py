@@ -16,8 +16,10 @@ React to a poll started message with the ballot/vote emoji
         super().__init__(**kwargs)
         self.vote_dict=self.public_namespace.vote_dict
         self.ballots=self.public_namespace.ballot
+
     def matches(self, reaction, user):
         return reaction.message.id in self.vote_dict
+
     def action(self, reaction, user):
         self.ballots[user.id]=reaction.message.id
         message = "Poll: **"+self.vote_dict[reaction.message.id][NAME]+"**\n"
